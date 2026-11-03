@@ -372,7 +372,7 @@ function fitActive() {
 function finalScore(ap) {
   const impact = weighted(ap.s, weights);
   if (!fitActive()) return impact;
-  return (1 - share / 100) * impact + (share / 100) * weighted(ap.f, talents);
+  return (1 - share / 100) * impact + (share / 100) * (2 * weighted(ap.f, talents) - 100);
 }
 
 const rankEl = document.getElementById("rank");
